@@ -1,0 +1,27 @@
+<ion-view title="Cart" id="page11" cache-view="false">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-icon icon ion-arrow-left-c" ng-click="myGoBack()"></button>
+  </ion-nav-buttons>
+
+
+
+  <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="false">
+
+
+    <ion-list id="cart-list11">
+
+      <ion-item id="cart-list-item55" ng-repeat="item in items">{{item.itemname}}
+        <span class="item-note">{{item.quantity}}*{{item.price}}   </span>
+
+      </ion-item>
+
+
+
+
+      <button class="button button-full button-dark" ng-click=charge(item)>
+      <i class="icon ion-loading-c"></i> Charge  [{{grandTotal}}]
+    </button>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

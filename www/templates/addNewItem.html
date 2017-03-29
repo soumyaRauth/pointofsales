@@ -1,0 +1,48 @@
+<ion-view title="Add new Item" id="page4" cache-view="false">
+  <ion-nav-buttons side="right" scroll="true" class="has-header">
+    <button class="button button-light icon ion-checkmark" ng-click="insertNewItem()"> save</button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-icon icon ion-arrow-left-c" ng-click="myGoBack()"></button>
+  </ion-nav-buttons>
+  <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="false" ng-click="hidekeyboard()">
+    <form id="addNewItem-form2" class="list">
+      <label class="item item-input item-floating-label" id="addNewItem-input4">
+        <span class="input-label" ">Item name</span>
+        <input type="text" ng-model="item.itemname" placeholder="* enter item name " required>
+      </label>
+      <label class="item item-select" id="addNewItem-select1" ng-model="category">
+        <span class="input-label">Category</span>
+        <select ng-model="item.category" >
+          <option ng-repeat="category in categories">{{category}}</option>
+          
+        </select>
+      </label>
+      <label class="item item-select" id="addNewItem-select2">
+        <span class="input-label">Sold by</span>
+        <select ng-model="item.soldby">
+          <option>Each</option>
+          <option>Weight</option>
+        </select>
+      </label>
+      <label class="item item-input item-floating-label" id="addNewItem-input7">
+        <span class="input-label" >Item price</span>
+        <input type="number" ng-model="item.price" placeholder="* enter item price" required>
+      </label>
+      <label class="item item-input item-floating-label" id="addNewItem-input8">
+        <span class="input-label">SKU</span>
+        <input type="text" ng-model="item.sku" id="addNewItem-sku" placeholder="* enter sku" value="123" >
+      </label>
+      <label class="item item-input item-floating-label" id="addNewItem-input9" name="barcode">
+        <span class="input-label">Barcode</span>
+        <input type="text" ng-model="item.barcode" placeholder="(optional) enter barcode">
+      </label>
+      <label class="item item-input item-floating-label" id="addNewItem-input10" name="cashier">
+        <span class="input-label">Cashier</span>
+        <input type="text" ng-model="item.cashier" placeholder="Name of cashier" required>
+      </label>
+
+      <!--<input type="submit"  class="button button-block button-positive" value="Submit">-->
+    </form>
+  </ion-content>
+</ion-view>

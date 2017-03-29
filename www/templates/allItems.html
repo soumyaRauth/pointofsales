@@ -1,0 +1,25 @@
+<ion-view title="All Items" id="page6" cache-view="false">
+  <ion-nav-buttons side="right" scroll="true" class="has-header">
+    <button class="button button-light icon ion-android-add" ng-click="goToAddItem()"> Add new Item</button>
+  </ion-nav-buttons>
+  <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="true">
+    <label class="item item-select" id="sales-select4">
+        <span class="input-label" ><h3>Select Category</h3></span>
+        <select ng-model="category.catSelected" ng-change="showSelectValue(category.catSelected)" class="sales-select">
+          <option value="" selected>All</option>
+          <option ng-repeat="category in categories">{{category}}</option>
+          
+        </select>
+      </label>
+    <ion-list id="item-list" can-swipe="true" show-delete="false">
+
+      <ion-item class="item-icon-left" ng-repeat="item in items" id="sales-list-item4">{{item.itemname}}
+        <ion-option-button class="button-assertive" ng-click="deleteItem($index,item)">Delete</ion-option-button>
+
+        <i class="icon ion-android-checkbox-blank"></i>
+
+        <span class="item-note">{{item.price}} tk</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

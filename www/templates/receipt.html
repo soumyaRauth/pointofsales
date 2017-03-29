@@ -1,0 +1,24 @@
+<ion-view title="Receipt" id="page3">
+  <ion-content padding="false" class="has-header">
+
+    <ion-list id="receipt-list8" ng-repeat="item in items">
+
+      <ion-item class="item-divider" id="receipt-list-item-divider2">Receipt number #{{item.ordernumber}}
+        <div>Date:{{item.timestamp}}
+
+        </div>
+        <!--<button id="refund_button" ng-click="refundChange()" class="button button-small button-balanced">
+   Refund
+</button>-->
+
+      </ion-item>
+      <ion-item id="receipt-list-item41">Item name: {{item.itemname}}</ion-item>
+      <ion-item id="receipt-list-item41">Unit Price: {{item.price}}</ion-item>
+      <ion-item id="receipt-list-item41">Item quantity: {{item.tempquantity}}</ion-item>
+      <ion-item id="receipt-list-item41">Total: {{item.total}}</ion-item>
+      <ion-item id="receipt-list-item41">Cashier name: {{item.cashier}}</ion-item>
+
+
+    </ion-list>
+  </ion-content>
+</ion-view>
