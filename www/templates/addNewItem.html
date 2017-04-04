@@ -1,6 +1,6 @@
 <ion-view title="Add new Item" id="page4" cache-view="false">
   <ion-nav-buttons side="right" scroll="true" class="has-header">
-    <button class="button button-light icon ion-checkmark" ng-click="insertNewItem()"> save</button>
+    <button class="button button-light icon ion-checkmark" ng-click="insertNewItem()">save</button>
   </ion-nav-buttons>
   <ion-nav-buttons side="left" class="has-header">
     <button class="button button-icon icon ion-arrow-left-c" ng-click="myGoBack()"></button>
@@ -21,7 +21,7 @@
       <label class="item item-select" id="addNewItem-select2">
         <span class="input-label">Sold by</span>
         <select ng-model="item.soldby">
-          <option>Each</option>
+          <option>Piece</option>
           <option>Weight</option>
         </select>
       </label>
@@ -35,14 +35,11 @@
       </label>
       <label class="item item-input item-floating-label" id="addNewItem-input9" name="barcode">
         <span class="input-label">Barcode</span>
-        <input type="text" ng-model="item.barcode" placeholder="(optional) enter barcode">
-      </label>
-      <label class="item item-input item-floating-label" id="addNewItem-input10" name="cashier">
-        <span class="input-label">Cashier</span>
-        <input type="text" ng-model="item.cashier" placeholder="Name of cashier" required>
+        <input type="text" ng-model="item.barcode" placeholder="(optional) enter barcode" value="barcode">
       </label>
 
-      <!--<input type="submit"  class="button button-block button-positive" value="Submit">-->
+
+
     </form>
   </ion-content>
 </ion-view>

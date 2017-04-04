@@ -15,6 +15,7 @@ angular.module('app.receiptCtrl', ['ngCordova'])
 
 
             var query = "SELECT * FROM receipt WHERE ordernumber"
+
             console.log(query);
             $cordovaSQLite.execute(db, query, []).then(function (res) {
 

@@ -49,6 +49,7 @@ angular.module('app.routes', [])
       })
 
       .state('addNewItem', {
+        cache: false,
         url: '/addnewitem',
         templateUrl: 'templates/addNewItem.html',
         controller: 'addNewItemCtrl'
@@ -133,8 +134,20 @@ angular.module('app.routes', [])
         templateUrl: 'templates/transactionSuccess.html',
         controller: 'transactionsuccessCtrl'
       })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      })
+      .state('addnewuser', {
+        url: '/addnewuser',
+        templateUrl: 'templates/addNewUser.html',
+        controller: 'addnewuserCtrl'
 
-    $urlRouterProvider.otherwise('/side-menu21/sales')
+      })
+
+    // $urlRouterProvider.otherwise('/side-menu21/sales')
+    $urlRouterProvider.otherwise('/login');
 
 
 

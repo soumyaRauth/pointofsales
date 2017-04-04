@@ -129,8 +129,6 @@ angular.module('app.transactionsuccessCtrl', ['ngCordova'])
 
                     });
 
-
-
                     //CONFIRMATION ALERT CODE ENDS                    
 
 

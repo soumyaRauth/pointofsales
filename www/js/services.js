@@ -1,12 +1,19 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
+    .factory('BlankFactory', [function () {
 
-}])
+    }])
 
-.service('blankService', [function(){
+    .service('userService', [function () {
 
+        return {
+            user: {},
+            getUsername: function () {
+                return this.user;
+            },
+            setUsername: function (user) {
+                this.user = user;
+            }
+        }
 
-
-
-}]);
+    }]);

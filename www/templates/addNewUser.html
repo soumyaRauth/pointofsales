@@ -1,0 +1,35 @@
+<ion-view title="Add new user" id="user" cache-view="false">
+    <ion-nav-buttons side="right" scroll="true" class="has-header">
+        <button class="button button-light icon ion-checkmark" ng-click="insertNewUser()"> save</button>
+    </ion-nav-buttons>
+
+    <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="false" ng-click="hidekeyboard()">
+        <form name='myform' id="addNewItem-form2" class="list">
+
+            <span class="input-label">Password must be 6 charecters</span>
+
+            <label class="item item-input item-floating-label" id="addNewItem-input4">
+        <span class="input-label" ">User name</span>
+        <input type="text" ng-model="user.username" placeholder="* enter username " required>
+      </label>
+
+
+            <label class="item item-input item-floating-label" id="addNewItem-input7">
+        <span class="input-label" >email</span>
+        <input type="email" ng-model="user.email" placeholder="* e.g: email@email.com" required>
+      </label>
+            <label class="item item-input item-floating-label" id="addNewItem-input8">
+        <span class="input-label">password</span>
+        <input type="password" ng-minlength="6" ng-model="user.password" id="addNewItem-sku" placeholder="* enter password"  >
+      </label>
+
+            <label class="item item-input item-floating-label" id="addNewItem-input9" name="confirmpassword">
+        <span class="input-label">Confirm Password</span>
+        <input type="password" ng-model="user.confirmpassword" placeholder="Confirm password" required>
+      </label>{{ textmsg}}
+
+
+
+        </form>
+    </ion-content>
+</ion-view>

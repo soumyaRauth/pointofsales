@@ -1,13 +1,19 @@
 angular.module('app.salesCtrl', ['ngCordova'])
 
-    .controller('salesCtrl', ['$scope', '$state', '$stateParams', '$cordovaSQLite', '$ionicPlatform', '$ionicPopup',
-        function ($scope, $state, $stateParams, $cordovaSQLite, $ionicPlatform, $ionicPopup) {
+    .controller('salesCtrl', ['$scope', '$state', '$stateParams', '$cordovaSQLite', '$ionicPlatform', '$ionicPopup', 'userService',
+        function ($scope, $state, $stateParams, $cordovaSQLite, $ionicPlatform, $ionicPopup, userService) {
 
 
             $scope.category = {};
             $scope.categories = ["Food", "Beverages", "Others"];
             $scope.flag = 0;
             refund = 0;
+            $scope.userName = {};
+
+            $scope.userName = userService.getUsername();
+            console.log("CURRENT USER");
+            console.log($scope.userName.username);
+
 
 
 

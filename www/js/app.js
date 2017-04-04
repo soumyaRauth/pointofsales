@@ -11,6 +11,7 @@ var db = null;
 angular.module('app', [
   'ionic',
   'ngCordova',
+  'ionic-toast',
   'app.controllers',
   'app.allItemsCtrl',
   'app.routes',
@@ -22,6 +23,8 @@ angular.module('app', [
   'app.cartCtrl',
   'app.transactionsuccessCtrl',
   'app.receiptCtrl',
+  'app.addnewuserCtrl',
+  'app.LoginCtrl'
 
 ])
 
@@ -60,8 +63,9 @@ angular.module('app', [
 
       }
 
-      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS items (id integer primary key,itemname text ,category text ,soldby text ,price REAL ,quantity REAL ,sku integer ,barcode text NOT NULL,timestamp DATE DEFAULT (datetime('now','localtime')),cashier text NOT NULL,total REAL,receitnumber integer,grandtotal REAL)");
-      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS receipt (id integer primary key,itemname text ,category text ,soldby text ,price REAL ,quantity REAL ,sku integer ,barcode text NOT NULL,timestamp DATE DEFAULT (datetime('now','localtime')),cashier text NOT NULL,total REAL,grandtotal REAL,ordernumber integer,tempquantity integer,refund integer)");
+      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS items (id integer primary key ,itemname text ,category text ,soldby text ,price REAL ,quantity REAL ,sku integer ,barcode text,timestamp DATE DEFAULT (datetime('now','localtime')),cashier text,total REAL,receitnumber integer,grandtotal REAL)");
+      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS receipt (id integer primary key,itemname text ,category text ,soldby text ,price REAL ,quantity REAL,sku integer,barcode text,timestamp DATE DEFAULT (datetime('now','localtime')),cashier text,total REAL,grandtotal REAL,ordernumber integer,tempquantity integer,refund integer)");
+      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key,username text ,email text,password text,timestamp DATE DEFAULT (datetime('now','localtime')))");
       //DATABASE SECTION ENDS
 
       // db=$cordovaSQLite.openDB({name:"pos.db"});
