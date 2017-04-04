@@ -14,9 +14,14 @@
     </ion-header-bar>
     <ion-content padding="false" class="side-menu-left has-header ">
       <ion-list id="menu-list1">
+
         <ion-item class="item-icon-left bgcol" id="menu-list-item1">
-          <i class="icon ion-person size"></i>Welcome
-          <h1>{{userName.username}}</h1>
+
+
+          Current User:
+          <h1 style="color:lightgreen;margin-left:10px;">{{userName.username}}</h1>
+
+
         </ion-item>
         <ion-item class="item-icon-left" id="menu-list-item1" ui-sref="menu.sales" menu-close="">
           <i class="icon ion-bag"></i>Sales</ion-item>

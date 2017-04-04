@@ -34,14 +34,11 @@ angular.module('app.addNewItemCtrl', ['ngCordova'])
                                 console.log($scope.item.soldby);
                                 console.log($scope.item.price);
                                 console.log($scope.item.sku);
-                                console.log("Printing barcode");
+                                //console.log("Printing barcode");
                                 console.log($scope.item.barcode);
                                 console.log($scope.item.total);
 
                                 //ITEM ADDED SUCCESS POPUP STARTS                
-
-
-
 
                                 //ITEM ADDED SUCCESS POPUP ENDS  
 
