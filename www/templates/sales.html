@@ -1,6 +1,6 @@
 <ion-view title="     Sales" id="page1" cache-view="false">
   <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-ios-cart-outline" ui-sref="cart"> Cart</button>
+    <button class="button button-icon icon ion-ios-cart-outline" ng-click="enabled()" ui-sref="cart"> Cart</button>
   </ion-nav-buttons>
   <ion-content padding="false" class="has-header">
 
@@ -9,7 +9,7 @@
         <span class="input-label" ><h3>Select Category</h3></span>
         <select ng-model="category.catSelected" ng-change="showSelectValue(category.catSelected)" class="sales-select">
           <option value="" selected>All</option>
-          <option ng-repeat="category in categories">{{category}}</option>
+          <option class="fixing-width" ng-repeat="category in categories">{{category}}</option>
           
         </select>
       </label>

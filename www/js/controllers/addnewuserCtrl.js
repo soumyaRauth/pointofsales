@@ -1,9 +1,9 @@
 angular.module('app.addnewuserCtrl', ['ngCordova',])
 
-    .controller('addnewuserCtrl', ['$scope', '$stateParams', '$ionicHistory', '$ionicPopup', '$cordovaSQLite', '$state', 'ionicToast', '$ionicViewService',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+    .controller('addnewuserCtrl', ['$scope', '$stateParams', '$ionicHistory', '$ionicPopup', '$cordovaSQLite', '$state', 'ionicToast', '$ionicHistory',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
         // You can include any angular dependencies as parameters for this function
         // TIP: Access Route Parameters for your page via $stateParams.parameterName
-        function ($scope, $stateParams, $ionicHistory, $ionicPopup, $cordovaSQLite, $state, ionicToast, $ionicViewService) {
+        function ($scope, $stateParams, $ionicHistory, $ionicPopup, $cordovaSQLite, $state, ionicToast, $ionicHistory) {
 
             $scope.user = {};
             $scope.user = [];
@@ -71,7 +71,7 @@ angular.module('app.addnewuserCtrl', ['ngCordova',])
                         });
 
                     ionicToast.show('User added. Please login', 'top', false, 2000);
-                    $ionicViewService.clearHistory();
+                    $ionicHistory.clearHistory();
                     $state.go('login');
                 } else {
                     //CONFIRMATION ALERT CODE STARTS

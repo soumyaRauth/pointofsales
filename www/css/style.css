@@ -11,3 +11,17 @@
     
 }
 
+.pane-bg {
+        background: url("../img/backgrounds.jpg") no-repeat center center fixed; 
+        
+        background-size: cover;
+    }
+
+    .scaling{
+        margin-top:220px;
+    }
+
+    .fixing-width{
+        width:10px;
+    }
+

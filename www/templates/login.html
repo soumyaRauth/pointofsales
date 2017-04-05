@@ -1,15 +1,18 @@
-<ion-view view-title="Login" name="login-view">
+<ion-view class="pane-bg" view-title="Login" name="login-view">
     <ion-content class="padding" scroll="false">
-        <div class="list list-inset">
-            <label class="item item-input">
+
+        <div class="scaling">
+            <div class="list list-inset">
+                <label class="item item-input">
               <input type="text" placeholder="Username" ng-model="user.username">
           </label>
-            <label class="item item-input">
+                <label class="item item-input">
               <input type="password" placeholder="Password" ng-model="user.password">
             </label>
-        </div>
-        <button class="button button-block button-calm" ng-click="login()">Login</button>
-        <button class="button button-block button button-outline button-positive" ng-click="registration()">Add user</button>
+            </div>
 
+            <button class="button button-block  button-energized" ng-click="login()">Login</button>
+            <button class="button button-block button  button-balanced" ng-click="registration()">Add user</button>
+        </div>
     </ion-content>
 </ion-view>

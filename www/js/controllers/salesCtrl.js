@@ -2,7 +2,10 @@ angular.module('app.salesCtrl', ['ngCordova'])
 
     .controller('salesCtrl', ['$scope', '$state', '$stateParams', '$cordovaSQLite', '$ionicPlatform', '$ionicPopup', 'userService',
         function ($scope, $state, $stateParams, $cordovaSQLite, $ionicPlatform, $ionicPopup, userService) {
-
+            if (window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                console.log("Keyboard code");
+            }
 
             $scope.category = {};
             $scope.categories = ["Food", "Beverages", "Others"];

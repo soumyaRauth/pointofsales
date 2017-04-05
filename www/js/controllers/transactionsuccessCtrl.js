@@ -1,9 +1,9 @@
 angular.module('app.transactionsuccessCtrl', ['ngCordova'])
 
-    .controller('transactionsuccessCtrl', ['$scope', '$stateParams', '$state', '$cordovaSQLite', '$ionicPlatform', '$ionicPopup', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+    .controller('transactionsuccessCtrl', ['$scope', '$stateParams', '$state', '$cordovaSQLite', '$ionicPlatform', '$ionicPopup', 'userService', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
         // You can include any angular dependencies as parameters for this function
         // TIP: Access Route Parameters for your page via $stateParams.parameterName
-        function ($scope, $stateParams, $state, $cordovaSQLite, $ionicPlatform, $ionicPopup) {
+        function ($scope, $stateParams, $state, $cordovaSQLite, $ionicPlatform, $ionicPopup, userService) {
 
 
 
@@ -12,6 +12,13 @@ angular.module('app.transactionsuccessCtrl', ['ngCordova'])
             $scope.item = {};
             $scope.ordernumber = Math.floor(Math.random() * 2017);
             $scope.grandTotal = null;
+
+
+            $scope.userName = {};
+
+            $scope.userName = userService.getUsername();
+            console.log("CURRENT USER");
+            console.log($scope.userName.username);
 
 
 
@@ -39,10 +46,10 @@ angular.module('app.transactionsuccessCtrl', ['ngCordova'])
 
 
                 $scope.confirmCharge = function () {
-                    var query2 = "UPDATE receipt SET ordernumber =" + "'" + $scope.ordernumber + "'" + " WHERE quantity!=''";
+                    var query2 = "UPDATE receipt SET ordernumber =" + "'" + $scope.ordernumber + "'," + "cashier=" + "'" + $scope.userName.username + "'" + " WHERE quantity!=''";
 
                     console.log($scope.ordernumber + "ORDER NUMBER");
-                    console.log(query2);
+                    console.log("QUERY 2 " + query2);
 
                     $cordovaSQLite.execute(db, query2, []).then(function (result) {
 

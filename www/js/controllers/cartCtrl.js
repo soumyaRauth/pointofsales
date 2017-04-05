@@ -5,10 +5,6 @@ angular.module('app.cartCtrl', ['ngCordova'])
         // TIP: Access Route Parameters for your page via $stateParams.parameterName
         function ($scope, $stateParams, $state, $cordovaSQLite, $ionicHistory, $ionicPopup, $ionicPlatform) {
 
-
-
-
-
             $scope.items = [];
             $scope.grandTotal = 0;
             $scope.receiptnumber = 0;
@@ -59,8 +55,8 @@ angular.module('app.cartCtrl', ['ngCordova'])
                 //EXP CODE ENDS
 
 
-                $ionicHistory.clearCache();
-                $ionicHistory.clearHistory();
+                // $ionicHistory.clearCache();
+                // $ionicHistory.clearHistory();
 
 
 
@@ -72,6 +68,8 @@ angular.module('app.cartCtrl', ['ngCordova'])
 
 
                     $scope.grandTotal = res.rows.item(0).total;
+                    console.log("Grand total");
+                    console.log($scope.grandTotal);
                     //console.log("SUM TOTAL TEST");
                     //console.log(res.rows[0].total);
 
@@ -84,12 +82,6 @@ angular.module('app.cartCtrl', ['ngCordova'])
 
 
                 //GRAND TOTAL CALCULATION ENDS            
-
-
-
-
-
-
 
                 //Back button STARTS
                 $scope.myGoBack = function () {

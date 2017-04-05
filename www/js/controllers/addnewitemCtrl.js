@@ -17,6 +17,10 @@ angular.module('app.addNewItemCtrl', ['ngCordova'])
 
 
             $ionicPlatform.ready(function () {
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                    console.log("Keyboard code");
+                }
 
                 // cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 //EXPERIMENTAL CODE STARTS
@@ -34,7 +38,7 @@ angular.module('app.addNewItemCtrl', ['ngCordova'])
                                 console.log($scope.item.soldby);
                                 console.log($scope.item.price);
                                 console.log($scope.item.sku);
-                                //console.log("Printing barcode");
+                                // console.log("Printing barcode");
                                 console.log($scope.item.barcode);
                                 console.log($scope.item.total);
 
